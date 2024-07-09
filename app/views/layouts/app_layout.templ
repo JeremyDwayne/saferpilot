@@ -1,0 +1,12 @@
+package layouts
+
+import "saferpilot/app/views/components"
+
+templ App() {
+	@Layout() {
+		@components.Navigation()
+		<div class="max-w-7xl mx-auto">
+			{ children... }
+		</div>
+	}
+}
