@@ -1,0 +1,5 @@
+providers = ["go"]
+[phases.build]
+cmds = ["make build"]
+[start]
+cmd = "./bin/app_prod"
