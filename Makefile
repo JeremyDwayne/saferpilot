@@ -61,9 +61,9 @@ dev:
 # build the application for production. This will compile your app
 # to a single binary with all its assets embedded.
 build:
-	@pnpx tailwindcss -i app/assets/app.css -o ./public/assets/styles.css
-	@pnpx esbuild app/assets/index.js --bundle --outdir=public/assets
-	@go build -o bin/app_prod cmd/app/main.go
+	@pnpx tailwindcss -i ./app/assets/app.css -o ./public/assets/styles.css
+	@pnpx esbuild ./app/assets/index.js --bundle --outdir=./public/assets
+	@go build -o ./bin/app_prod ./cmd/app/main.go
 	@echo "compiled you application with all its assets to a single binary => bin/app_prod"
 
 db-status:
