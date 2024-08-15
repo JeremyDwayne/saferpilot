@@ -1,0 +1,16 @@
+{
+  "name": "saferpilot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "watch": "tailwindcss build -i assets/app.css -o public/assets/style.css --watch",
+    "build": "tailwindcss build -i assets/app.css -o public/assets/style.min.css --minify"
+  },
+  "author": "Jeremy Winterberg",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.21.5",
+    "tailwindcss": "^3.4.9"
+  }
+}

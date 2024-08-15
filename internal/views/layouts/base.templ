@@ -1,0 +1,31 @@
+package layouts
+
+import (
+	"os"
+	"saferpilot/internal/views/components"
+)
+
+templ BaseLayout() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>saferpilot</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="icon" href="public/assets/favicon.ico" type="image/x-icon"/>
+			if os.Getenv("ENV") == "production" {
+				<link rel="stylesheet" href="public/assets/style.min.css"/>
+			} else {
+				<link rel="stylesheet" href="public/assets/style.css"/>
+			}
+			<script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous" defer></script>
+		</head>
+		<body x-data="{theme: 'dark'}" :class="theme" class="dark bg-[#070815] flex min-h-screen flex-col">
+			@components.Navigation()
+			<main class="mt-4 flex-1">
+				{ children... }
+			</main>
+			@components.Footer()
+		</body>
+	</html>
+}

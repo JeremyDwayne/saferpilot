@@ -1,0 +1,23 @@
+package components
+
+templ Navigation() {
+	<header>
+		<nav class="p-4" aria-label="Top Navigation">
+			<div class="mx-auto flex max-w-6xl flex-col justify-between py-2 text-lg font-semibold md:flex-row md:items-center">
+				<div class="flex-1">
+					@FullLogo()
+				</div>
+				<div class="flex flex-row items-center gap-4">
+					<ol class="flex space-x-4">
+						<li>
+							<a class="no-underline hover:text-pink-400 hover:underline" href="/register">Register</a>
+						</li>
+						<li>
+							<a class="no-underline hover:text-pink-400 hover:underline" href="/login">Login</a>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</nav>
+	</header>
+}

@@ -1,0 +1,59 @@
+package views
+
+import "saferpilot/internal/views/layouts"
+
+templ Login() {
+	@layouts.App() {
+		<div class="w-full justify-center gap-10">
+			<div class="mt-10 lg:mt-40">
+				<div class="max-w-sm mx-auto border rounded-md shadow-sm py-12 px-8 flex flex-col gap-8">
+					<h2 class="text-center text-2xl font-medium">Login to saferpilot</h2>
+					@LoginForm()
+					<a class="text-sm underline" href="/register">Don't have an account? Register here.</a>
+				</div>
+			</div>
+		</div>
+	}
+}
+
+templ LoginForm() {
+	<div hx-ext="response-targets">
+		<form hx-post="/login" hx-trigger="submit" hx-target-401="#login-error">
+			<div id="login-error"></div>
+			<div>
+				<label for="email">Your email</label>
+				<input
+					type="email"
+					name="email"
+					id="email"
+					placeholder="name@company.com"
+					required=""
+					autocomplete="email"
+					class="flex w-full px-3 py-2 bg-transparent text-sm border rounded-md ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+				/>
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="••••••••"
+					required=""
+					autocomplete="current-password"
+					class="flex w-full px-3 py-2 bg-transparent text-sm border rounded-md ring-offset-background placeholder:text-neutral-500 focus:border-neutral-300 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+				/>
+			</div>
+			<button
+				type="submit"
+				class="inline-flex text-primary-foreground items-center justify-center px-4 py-2 font-medium text-sm tracking-wide transition-colors duration-200 rounded-md bg-primary text-foreground hover:bg-primary/90 focus:ring focus:ring-primary focus:shadow-outline focus:outline-none mt-4"
+			>
+				Sign in
+			</button>
+		</form>
+	</div>
+}
+
+templ LoginError() {
+	<p>Invalid email or password</p>
+}

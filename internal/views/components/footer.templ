@@ -1,0 +1,57 @@
+package components
+
+templ Footer() {
+	<footer class="mt-4">
+		<div class="flex flex-col items-center justify-between gap-6 border-t border-slate-600 p-8 md:flex-row">
+			<div class="flex-1">
+				@FullLogo()
+				<p class="mt-3 text-sm text-slate-300/80">
+					A comprehensive platform enhancing pilot safety through profeciency.{ " " }
+				</p>
+				<p class="mt-3 text-sm text-slate-300/60">
+					Copyright © 2024 - All rights reserved
+				</p>
+			</div>
+			<nav aria-label="Footer">
+				<ul class="flex gap-6">
+					<li>
+						<a href="#pricing" class="inline-flex min-h-11 items-center no-underline hover:text-pink-400 hover:underline">
+							Pricing
+						</a>
+					</li>
+					<li>
+						<a
+							href="mailto:jeremy@saferpilot.com"
+							class="inline-flex min-h-11 items-center no-underline hover:text-pink-400 hover:underline"
+						>
+							Support
+						</a>
+					</li>
+					<li>
+						<a href="#" class="inline-flex min-h-11 items-center no-underline hover:text-pink-400 hover:underline">
+							Terms of Service
+						</a>
+					</li>
+					<li>
+						<a href="#" class="inline-flex min-h-11 items-center no-underline hover:text-pink-400 hover:underline">
+							Privacy policy
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.jeremywinterberg.com"
+							class="inline-flex min-h-11 items-center no-underline hover:text-pink-400 hover:underline"
+						>
+							Blog
+						</a>
+					</li>
+					<li>
+						<a href="#" class="inline-flex min-h-11 items-center no-underline hover:text-pink-400 hover:underline">
+							About Us
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+}
