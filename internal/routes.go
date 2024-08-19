@@ -17,7 +17,7 @@ func InitializeRoutes(router *chi.Mux) {
 		// app.Use(<auth middleware>) that allows anyone
 
 		app.HandleFunc("/", handlers.LandingHandler())
-		app.HandleFunc("/login", handlers.LoginHandler())
+		app.HandleFunc("/login", handlers.GetLoginHandler())
 	})
 
 	// Auth required
