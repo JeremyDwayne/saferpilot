@@ -17,7 +17,7 @@ func GetLoginHandler() http.HandlerFunc {
 
 func PostLoginHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		email := r.FormValue("email")
-		password := r.FormValue("password")
+		// email := r.FormValue("email")
+		// password := r.FormValue("password")
 	}
 }
