@@ -24,8 +24,31 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <header>
+      <h1><a href="/">Code Snippets</a></h1>
+    </header>
+    <nav>
+      <div>
+        <a href="/">Home</a>
+          <a href="/snippet/create">Add Snippet</a>
+      </div>
+      <div>
+          <form action="/user/logout" method="POST">
+            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+            <button>Logout</button>
+          </form>
+          <a href="/user/signup">Signup</a>
+          <a href="/user/login">Login</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="flash">{{.}}</div>
       <%= yield %>
     </main>
+
+    <footer>
+      &copy; <%= Time.now.year %> Safer Pilot
+    </footer>
   </body>
 </html>
