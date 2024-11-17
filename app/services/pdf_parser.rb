@@ -1,7 +1,7 @@
 require "pdf-reader"
 
 class PdfParser
-  def self.extract_tasks(file_path)
+  def self.extract_ppl(file_path)
     reader = PDF::Reader.new(file_path)
     areas_of_operation = []
     current_area = nil
@@ -138,6 +138,6 @@ class PdfParser
       end
     end
 
-    areas_of_operation
+    {areas_of_operation: areas_of_operation}
   end
 end
