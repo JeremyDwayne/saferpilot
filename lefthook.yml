@@ -3,8 +3,11 @@
 #   Refer for explanation to following link:
 #   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
 #
-# pre-push:
-#   commands:
+pre-push:
+  commands:
+    test-suite:
+      tags: test
+      run: rails test
 #     packages-audit:
 #       tags: frontend security
 #       run: yarn audit
@@ -19,17 +22,10 @@ pre-commit:
       tags: backend style
       glob: "*.rb"
       exclude: '(^|/)(application|routes)\.rb$'
-      run: bundle exec rubocop --force-exclusion {all_files}
-#     eslint:
-#       glob: "*.{js,ts,jsx,tsx}"
-#       run: yarn eslint {staged_files}
-#     govet:
-#       tags: backend style
-#       files: git ls-files -m
-#       glob: "*.go"
-#       run: go vet {files}
-#   scripts:
-#     "hello.js":
-#       runner: node
-#     "any.go":
-#       runner: go run
+      run: bundle exec rubocop --force-exclusion {staged_files}
+    # js:
+    #   glob: "*.js"
+    #   run: yarn prettier --write {staged_files} && yarn eslint {staged_files} && git add {staged_files}
+    # css:
+    #   glob: "*.{css,pcss}"
+    #   run: yarn prettier --write {staged_files} && yarn stylelint --fix {staged_files} && git add {staged_files}
