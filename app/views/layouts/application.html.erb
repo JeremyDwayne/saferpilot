@@ -13,9 +13,8 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="icon" href="/logo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="/logo.webp">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -25,25 +24,26 @@
 
   <body>
     <header>
-      <h1><a href="/">Code Snippets</a></h1>
+      <h1><a href="/">Safer Pilot</a></h1>
     </header>
     <nav>
       <div>
         <a href="/">Home</a>
-          <a href="/snippet/create">Add Snippet</a>
       </div>
       <div>
-          <form action="/user/logout" method="POST">
-            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
-            <button>Logout</button>
-          </form>
-          <a href="/user/signup">Signup</a>
-          <a href="/user/login">Login</a>
+        <% if authenticated? %>
+          <%= button_to "Logout", session_path, method: :delete %>
+        <% else %>
+          <a href="/registration/new">Signup</a>
+          <a href="/session/new">Login</a>
+        <% end %>
       </div>
     </nav>
 
     <main>
-      <div class="flash">{{.}}</div>
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
       <%= yield %>
     </main>
 

@@ -14,7 +14,6 @@
   margin: 0;
   padding: 0;
   font-size: 18px;
-  font-family: "Ubuntu Mono", monospace;
 }
 
 html,
@@ -46,11 +45,9 @@ main {
 h1 a {
   font-size: 36px;
   font-weight: bold;
-  background-image: url("/static/img/logo.png");
   background-repeat: no-repeat;
   background-position: 0px 0px;
   height: 36px;
-  padding-left: 50px;
   position: relative;
 }
 

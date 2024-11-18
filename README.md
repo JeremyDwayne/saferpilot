@@ -1,24 +1,10 @@
-# README
+# SaferPilot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Building safer pilots through proficient training. [saferpilot.com](https://saferpilot.com)
 
-Things you may want to cover:
+## Tech Stack
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby 3.3
+- Rails 8
+- TailwindCSS
+- Sqlite3
