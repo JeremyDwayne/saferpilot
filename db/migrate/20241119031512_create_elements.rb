@@ -7,6 +7,6 @@ class CreateElements < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    add_index :sessions, :id, unique: true
+    add_index :elements, :id, unique: true
   end
 end

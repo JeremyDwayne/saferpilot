@@ -16,6 +16,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_031512) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_elements_on_id", unique: true
   end
 
   create_table "sessions", id: :string, force: :cascade do |t|
