@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduled_at: 2024-11-19 04:36:35
+  user: one
+  completed: false
+  total_hours: 1.5
+
+two:
+  scheduled_at: 2024-11-19 04:36:35
+  user: two
+  completed: false
+  total_hours: 1.5

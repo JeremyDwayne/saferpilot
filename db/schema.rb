@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_031512) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_093635) do
   create_table "elements", id: :string, force: :cascade do |t|
     t.text "description"
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["id"], name: "index_elements_on_id", unique: true
+  end
+
+  create_table "flights", id: :string, force: :cascade do |t|
+    t.datetime "scheduled_at"
+    t.string "user_id", null: false
+    t.boolean "completed"
+    t.float "total_hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_flights_on_user_id"
   end
 
   create_table "sessions", id: :string, force: :cascade do |t|
@@ -38,5 +48,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_031512) do
     t.index ["id"], name: "index_users_on_id", unique: true
   end
 
+  add_foreign_key "flights", "users"
   add_foreign_key "sessions", "users"
 end
