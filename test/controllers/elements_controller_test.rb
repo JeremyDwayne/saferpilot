@@ -17,7 +17,7 @@ class ElementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create element" do
     assert_difference("Element.count") do
-      post elements_url, params: { element: { code: @element.code, description: @element.description } }
+      post elements_url, params: {element: {code: @element.code, description: @element.description}}
     end
 
     assert_redirected_to element_url(Element.last)
@@ -34,7 +34,7 @@ class ElementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update element" do
-    patch element_url(@element), params: { element: { code: @element.code, description: @element.description } }
+    patch element_url(@element), params: {element: {code: @element.code, description: @element.description}}
     assert_redirected_to element_url(@element)
   end
 

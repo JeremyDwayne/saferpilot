@@ -1,5 +1,5 @@
 class ElementsController < ApplicationController
-  before_action :set_element, only: %i[ show edit update destroy ]
+  before_action :set_element, only: %i[show edit update destroy]
 
   # GET /elements or /elements.json
   def index
@@ -58,13 +58,14 @@ class ElementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_element
-      @element = Element.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def element_params
-      params.expect(element: [ :description, :code ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_element
+    @element = Element.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def element_params
+    params.expect(element: [:description, :code])
+  end
 end
