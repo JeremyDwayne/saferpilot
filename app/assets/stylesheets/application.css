@@ -9,6 +9,44 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+.hero h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+.feature {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+.feature h3 {
+  margin-top: 0;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -63,15 +101,16 @@ h2 {
   top: -9px;
 }
 
-a {
-  color: #62cb31;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #4eb722;
-  text-decoration: underline;
-}
+/* a { */
+/*   /* color: #62cb31; */
+*/
+/*   text-decoration: none; */
+/* } */
+/**/
+/* a:hover { */
+/*   /* color: #4eb722; */ */
+/*   text-decoration: underline; */
+/* } */
 
 textarea,
 input:not([type="submit"]) {
@@ -227,21 +266,32 @@ nav a.live:after {
   -webkit-transform: rotate(-45deg);
 }
 
+.primary {
+  color: #ffffff;
+  background-color: #34495e;
+}
+.primary:hover {
+  color: #ffffff;
+  background-color: #334155;
+}
+
 a.button,
 input[type="submit"] {
-  background-color: #62cb31;
-  border-radius: 3px;
+  background-color: #34495e;
+  /* background-color: #62cb31; */
+  border-radius: 0.5rem;
   color: #ffffff;
-  padding: 18px 27px;
+  padding: 0.75rem 1.25rem;
   border: none;
   display: inline-block;
-  margin-top: 18px;
-  font-weight: 700;
+  margin-top: 0.5rem;
+  font-weight: 500;
 }
 
 a.button:hover,
 input[type="submit"]:hover {
-  background-color: #4eb722;
+  /* background-color: #4eb722; */
+  background-color: #334155;
   color: #ffffff;
   cursor: pointer;
   text-decoration: none;
@@ -303,12 +353,14 @@ button {
   background: none;
   padding: 0;
   border: none;
-  color: #62cb31;
+  /* color: #62cb31; */
+  color: #34495e;
   text-decoration: none;
 }
 
 button:hover {
-  color: #4eb722;
+  /* color: #4eb722; */
+  color: #334155;
   text-decoration: underline;
   cursor: pointer;
 }
