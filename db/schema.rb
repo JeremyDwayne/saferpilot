@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_093635) do
-  create_table "elements", id: :string, force: :cascade do |t|
-    t.text "description"
-    t.string "code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["id"], name: "index_elements_on_id", unique: true
-  end
-
+ActiveRecord::Schema[8.0].define(version: 2024_11_21_184738) do
   create_table "flights", id: :string, force: :cascade do |t|
     t.datetime "scheduled_at"
     t.string "user_id", null: false
@@ -37,6 +29,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_093635) do
     t.datetime "updated_at", null: false
     t.index ["id"], name: "index_sessions_on_id", unique: true
     t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
+
+  create_table "tasks", id: :string, force: :cascade do |t|
+    t.string "name"
+    t.string "acs_code"
+    t.text "description"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :string, force: :cascade do |t|

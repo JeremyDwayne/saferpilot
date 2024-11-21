@@ -3,6 +3,8 @@ require "test_helper"
 class FlightsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @flight = flights(:one)
+    @user = users(:one)
+    login_as(@user)
   end
 
   test "should get index" do
