@@ -35,7 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_21_184738) do
     t.string "name"
     t.string "acs_code"
     t.text "description"
-    t.string "category"
+    t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
